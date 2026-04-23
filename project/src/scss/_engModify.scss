@@ -1,0 +1,380 @@
+/* 영문버전 수정 */
+
+.eng {
+
+    /* 서브탑 수정 */
+    .cptSubTop .subTopArea .subTitle h1 {
+        font-size: rem(40px);
+        &::after {
+            display: none;
+        }
+        @include media('mobile') {
+            font-size: rem(28px);
+        }
+    }
+
+    .cptContSpeedom {
+        .contArea {
+            .btnGrp {
+                flex-wrap: wrap;
+                a {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .comImgBox {
+        .btnGroup.cameraEquip {
+            .ballon {
+                &.num01 {
+                    height: auto;
+                }
+                &.num02 {
+                    height: auto;
+                }
+                &.num03 {
+                    height: auto; bottom: 9px;
+                }
+            }
+        }
+    }
+    /* 출주표 */
+    .cptSection:has(.comDateSwiper.sticky) {
+        top: 0;
+    }
+    .comDateSwiper {
+        &.sticky.sOn {
+            .dateSwiper {
+                top: 0;
+            }
+        }
+        .dateSwiper {
+            .swiper-slide {
+                .dateBox {
+                    //width: 140px; height: 40px; padding: 12px 0; border: 1px solid #B0B2B7; border-radius: 20px; display: flex; justify-content: center;
+                    border: 1px solid #B0B2B7;
+                    .region {}
+                    .date {margin-left: 4px;}
+                    &:hover {
+                        color: #111; border: 1px solid #6F7176; background: #fff;
+                        span {color: #111;}
+                    }
+                    &.on {
+                        &.blue {border: 1px solid var(--zone-blue);}
+                        &.red {border: 1px solid var(--zone-pink);}
+                        &.green {border: 1px solid var(--zone-green);}
+                    }
+                }
+            }
+        }
+    }
+    .comDataTable {
+        &.both {
+            .tableArea {
+                table {
+                    thead {
+                        tr {
+                            th { 
+                                position: static;
+                            }
+                        }
+                    }
+                    tbody {
+                        tr {
+                            th {position: static;}
+                        }
+                    }
+                }
+            }
+        }
+        &.row {
+            .tableArea {
+                table {
+                    tbody {
+                        tr {
+                            th {
+                                position: static;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .legend {
+            //width: 50px;
+        }
+        .name {
+            width: 100%; justify-content: flex-start;
+        }
+    }
+    .modLinkScroll {
+        .comTitH3 {
+            .right {
+                .legendList {
+                    .lgItem {
+                        .legend {
+                            //width: 50px;
+                        }
+                    }
+                }
+            }
+        }
+        @include media('mobile') {
+            .comTitH3:has(.right) {
+                flex-wrap: wrap;
+                .right {
+                    .legendList {
+                        flex-wrap: wrap;
+                        .lgItem {
+                            width: 100%; display: flex; flex-direction: row-reverse; align-items: center; gap: 5px;
+                            .legend {
+                                //width: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .comTitH2 {
+        &.mRow {
+            flex-wrap: wrap;
+            .right {margin-top: 12px; }
+        }
+    }
+    .comPlayerThumList {
+        .playerGroup {
+            .playerItem {
+                width: 100%; text-align: center;
+            }
+        }
+    }
+    .comInfoLayerPop {
+        .popWrap {
+            .popBody {
+                .sumBox {
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    /* 상세페이지 */
+    .cptBoardView {
+        @include media('mobile') {
+            .boardViewArea {
+                .viewTop {
+                    .info {flex-wrap: wrap; gap: 0 12px;}
+                } 
+            } 
+        }
+    } 
+    /* 이전/다음 페이지 */
+    .comPrevNext {
+        @include media('mobile') {
+            dl {
+                gap: 10px;
+                dt {
+                    width: 130px; flex: 0 0 auto; justify-content: flex-end;
+                }
+                dd {
+                    width: calc(100% - 140px);
+                }
+            }
+        }
+    }
+    /* 경륜동영상 */
+    .comSchDetail .searchOptionBox {
+        .iptRdoChk[type=checkbox] + label {
+            min-width: max-content; padding: 0 20px;
+        }
+        > dl dd .innerBox {
+            flex-wrap: wrap; gap: 10px 40px;
+            .subMenu .schBox .schDet {
+                min-width: max-content; padding: 0 15px; white-space: nowrap;
+            } 
+            .frmGroup {
+                flex-wrap: wrap;
+            }
+            .frmBox {
+                width: max-content;
+            }
+        }
+        @include media('mobile') {
+            .iptRdoChk[type=checkbox] + label {
+                min-width: max-content; padding: 0 20px;
+            }
+            > dl dt {
+                width: 100%;
+            }
+            > dl dd .innerBox {
+                flex-wrap: wrap; gap: 10px 40px;
+                .subMenu .schBox .schDet {
+                    min-width: max-content; padding: 0 15px; white-space: nowrap;
+                } 
+                .frmGroup {
+                    flex-wrap: nowrap;
+                    &.frmGroup.gridItem4 {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+                .frmBox {
+                    width: auto;
+                }
+            }
+        }
+    }
+    /* 경륜동영상 상세부분 */
+    .cptTheaterDetail {
+        .theaterDetail {
+            height: 100vh; overflow-y: auto;
+        }
+    }
+    .cptTheaterDetail [class*=Area] {
+        &.funcArea {
+            height: 100vh;
+        }
+        ul.btnGroup > li {
+            width: 100%;
+        }
+        .raceInfo {
+            .item {
+                flex-wrap: wrap;
+                .itemTit {
+                    width: 100%;
+                }
+                .itemVal {
+                    width: 50%;
+                }
+            }
+            &.half {
+                .item {
+                    width: 100%; flex-wrap: nowrap;
+                    .itemTit {width: 50%; flex-shrink: 0;}
+                }
+            }
+            &.full .item .itemVal + .itemVal {
+                margin-left: 0;
+            }
+        }
+    }
+    /* 선수 프로필 상세 */
+    .cptPersonDesc {
+        .profBox {
+            .photoArea {
+                .txtArea {
+                    .name {
+                        max-width: 186px; word-break: break-all;
+                    }
+                }
+            }
+        }
+        @include media('mobile') {
+            .profBox {
+                .photoArea {
+                    .txtArea {
+                        .name {
+                            max-width: none; word-break: break-all;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* -------------------------- 국문 텍스트 확대에 따른 영문 재 축소 스타일 -------------------------- */
+.eng .comDateSwiper .dateSwiper .swiper-slide .dateBox > span {
+    font-size: rem(14px); line-height: 1.25;
+}
+
+/* 출주표 */
+.eng .comDataTable .tableArea table thead tr th {
+    font-size: rem(15px); padding: 4px 5px; white-space: normal;
+}
+.eng .comDataTable .tableArea table tbody tr th {
+    font-size: rem(15px); padding: 4px 5px; white-space: normal;
+}
+.eng .comDataTable .tableArea table tbody tr th .txtBtn {
+    font-size: rem(15px);
+}
+.eng .comDataTable .tableArea table tbody tr td {
+    font-size: rem(15px); padding: 4px 5px; white-space: normal;
+}
+.eng .comDataTable .tableArea table tbody tr td .txtBtn {
+    font-size: rem(15px);
+}
+.eng .comDataTable .tableArea table tbody tr .left {
+    padding: 4px 10px;
+}
+.eng .comDataTable .player {
+    font-size: rem(15px);
+}
+
+
+/* 모바일 텍스트 크기 조절 */
+@include media('mobile') {
+    .eng .comBasicTxt .txt {
+        font-size: rem(15px);
+    }
+    .eng .comSubInfo .info {
+        font-size: rem(15px);
+    }   
+    .eng .comBasicList .item, .comJoinBtmText .item, .comNumList .listGroup .item .addList .item {
+        font-size: rem(15px);
+    }
+    .eng .cptOrderGuide .imgGuide .guideGroup .guideItem .tit .txt {
+        font-size: rem(15px);
+    }
+    .eng .cptImgGuideBox .boxArea .descArea .descItem dd {
+        font-size: rem(15px);
+    }
+    .eng .comImgBox .imgTxt, .comFomulBox .imgTxt {
+        font-size: rem(15px);
+    }
+    .eng .comNumList .listGroup .item .txt {
+        font-size: rem(15px);
+    }
+    .eng .comPrevNext dl dt {
+        font-size: rem(15px);
+    }
+    .eng .comPrevNext dl dd a {
+        font-size: rem(15px);
+    }
+    .eng .comContInfo .ppBox .cont .rowB .listGroup .item {
+        font-size: rem(15px);
+    }
+    .eng .cptContSelfTest .testCont .subject .txt {
+        font-size: rem(15px);
+    }
+    .eng .cptContSelfTest .testCont .clickBox ul li label {
+        font-size: rem(15px);
+    }
+    .eng .cptContProgram .prevntBox .item a .prevtPrgm .cont .txt {
+        font-size: rem(14px); //14px
+    }
+    .eng .cptGalleryList .galleryListArea .listBoard .listGroup .listItem .infoBox .title {
+        font-size: rem(15px);
+    }
+    .eng .comPrivacyBox .infoBox .boxCont .txtTit + .txt {
+        font-size: rem(15px);
+    }
+    .eng .comPrivacyBox .infoBox .boxCont .listGroup .item {
+        font-size: rem(15px);
+    }
+    .eng .comPrivacyBox .infoBox .boxCont .txt {
+        font-size: rem(15px);
+    }
+    .eng .cptQuickMove .boxArea .quickBox .txtArea .desc {
+        font-size: rem(15px);
+    }
+    .eng .cptContSpeedom .contArea .vrInfo dd {
+        font-size: rem(15px);
+    }
+    .eng .cptFacInfo .list .cont .rowA dl dd {
+        font-size: rem(15px);
+    }
+    .eng .cptSchRstCont .ctt .rstContent {
+        font-size: rem(14px); //14px
+    }
+}

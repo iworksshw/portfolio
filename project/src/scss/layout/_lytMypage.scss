@@ -1,0 +1,324 @@
+.lytMypage {
+    .layoutArea{
+        .layoutTop{
+            width:100%; height:176px; background: #EDF5F2; /*position: sticky; left: 0; top: 0; z-index: 100;*/
+            @include media('mobile'){
+                height:70px;
+            }
+        }
+        .layoutContainer{
+            --lnb-width: 320px;
+            width:100%;
+            .layoutCont{
+
+            }
+            .layoutSubCont{
+                display: flex; align-items: flex-start; flex-wrap: wrap; width: 100%; max-width: 1480px; padding: 60px 20px 0; margin: 0 auto 120px; position: relative;
+                .layoutLnbArea {
+                    display: flex; flex-direction: column-reverse; width: var(--lnb-width); padding-right: 60px;
+                    .lnbArea {
+                        padding: 32px 40px; border-radius: 16px; border: 1px solid var(--Bg-Line-line-100);
+                        .lnbTit {margin-bottom: 20px; font-size: rem(20px);}
+                        .lnbMenu {
+                            & > li {
+                                margin-top: 16px;
+                                a > span {
+                                    display: inline-block;
+                                }
+                                &.on > a > span {
+                                    position: relative;
+                                    font-weight: 700;
+                                    &::after {
+                                        display: block; content: ""; width: calc(100% + 4px); height: 12px; background: #a1f4c7; position: absolute; left: -2px; bottom: 0; z-index: -1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .userArea {
+                        margin-bottom: 60px; padding: 24px 40px 24px 24px; font-size: rem(14px); border-radius: 16px; border: 1px solid var(--Bg-Line-line-100);
+                        .grade {
+                            display: inline-flex; height: 22px; margin-bottom: 8px; padding: 0 8px; justify-content: center; align-items: center; font-size: rem(12px); border-radius: 4px; border: 1px solid var(--Gray-500); white-space: nowrap;
+                        }
+                        .info {
+                            color: var(--Gray-600);
+                            .state {
+                                margin-left: 4px;
+                            }
+                            &.user {
+                                font-weight: 500;
+                                strong {
+                                    font-size: rem(20px); color: var(--Gray-900);
+                                }
+                            }
+                        }
+                        .shortcut {
+                            display: block; margin-top: 12px;
+                        }
+                        .txtBtn {
+                            width: max-content; display: inline-flex; padding-right: 16px; text-align: right; font-size: rem(14px); color: var(--Gray-600); 
+                            white-space: nowrap; background: url(../../images/common/ic_12_arr_right_g.svg) right center no-repeat;
+                        }
+                    }
+                }
+                .layoutContArea {
+                    width: calc(100% - var(--lnb-width));
+                    margin-left: auto;
+                    .cptSubTop {
+                        background-color: transparent;
+                        .subTopArea {
+                            padding: 0;
+                            .location {
+                                margin-top: -60px; padding: 22px 0 20px;
+                            }
+                            .subTitle {
+                                display: flex; align-items: center; justify-content: space-between; margin: 0 0 20px;
+                                h1 {
+                                    font-size: rem(24px); color: var(--Grey-900); font-weight: 700; line-height: 1.4; word-break: keep-all;
+                                    &::after {content: none;}
+                                    // h2 {font-size: rem(20px);}
+                                }
+                                .right {
+                                    display: flex; align-items: center; margin-left: auto;
+                                    .frmBox {
+                                        width: 160px; max-width: 160px;
+                                        .iptSlt {height: 36px; font-size: 14px; background-position: right 16px center;}
+                                    }
+                                    .txtBtn {padding-right: 16px; text-align: right; font-size: rem(14px); color: var(--Gray-600); background: url(../../images/common/ic_12_arr_right_g.svg) right center no-repeat;}
+                                    .popIcon:not(:last-child) {margin-right: 6px;}
+                                    .selectDate {
+                                        display: flex; gap: 8px; align-items: center;
+                                        .val {margin-right: 12px; padding-top: 1px; font-size: rem(15px);}
+                                        button {
+                                            position: relative; width: 24px; height: 24px; border-radius: 6px; border: 1px solid var(--Gray-300); text-indent: -99999px; overflow: hidden;
+                                            &::before {
+                                                content:''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: url(../../images/common/ic_12_arr_right_g.svg) center center no-repeat;
+                                            }
+                                            &.prev {
+                                                transform: rotate(180deg);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        & + .cptDataSum,
+                        & + .modTab {
+                            margin-top: 0 !important;
+                        }
+                    }
+                    .popIcon {
+                        position: relative; display: inline-block; width: 20px; height: 20px; background: url(../../images/common/ico_guide_default.svg) no-repeat center center; text-indent: -99999px; overflow: hidden; vertical-align: middle;
+                    }
+                    
+                    .tooltipBox {
+                        width: 280px; padding: 16px 23px 16px 16px; border-radius: 8px; border: 1px solid var(--Point-Primary2); background: #fff; position: absolute; z-index: 99; display: none; box-shadow: 10px 10px 10px 0px rgba(40, 195, 158, 0.10);
+                        .btnClose {width: 16px; height: 16px; font-size: 0; background: url(../../images/common/ic_12_close.svg) center no-repeat; position: absolute; top: 8px; right: 8px;}
+                        .txt {font-size: rem(15px); font-weight: 500; line-height: 1.6; color: var(--Gray-800); text-align: left;}
+                        .btnMore {
+                            display: inline; font-size: rem(15px); color: var(--Primary);
+                            &::after {display: inline-block; content: ""; width: 16px; height: 16px; margin-left: 2px; background: url(../../images/common/ic_16_new_window_mint.svg) center no-repeat; vertical-align: text-top;}
+                        }
+                        &::after {display: block; content: ""; width: 14px; height: 14px; background: url(../../images/common/ic_14_ballon_tail.svg) center no-repeat; position: absolute; top: -12px; left: 30px; z-index: 1;}
+                        &.on {display: block;}
+                        &.point01 {
+                            left: -10px; top: 40px;
+                            &::after {left: 85px;}
+                        }
+                    }
+
+                    & > [class^=cpt] {
+                        .comGroupTop .tit {
+                            font-size: rem(18px); font-weight: 700;
+                        }
+                        .comTitH3 h3 {
+                            padding-left: 0; background: none;
+                        }
+                        .comBoardInfoBox {
+                            width: 100%; margin: 0; padding: 24px; background-color: transparent; border-radius: 12px; border: 2px solid var(--Gray-900);
+                        }
+                    }
+                    .cptJoinTable {
+                        margin-top: 60px;
+                        .joinArea {
+                            max-width: 100%; padding-top: 0;
+                            .tbBox {
+                                max-width: 600px;
+                            }
+                                        
+                            @include media('tablet'){
+                                .tbBox {
+                                    max-width: 100%;
+                                }
+                            }   
+                        }
+                    }
+
+                    &.myMain {
+                        .cptSubTop + * {
+                            margin-top: 0 !important;
+                        }
+                        & > [class^=cpt] {
+                            &:not(.cptSubTop) {
+                                margin-top: 100px;
+                            }
+                            .comTitH2 {
+                                margin: 0 0 20px;
+                            }
+                        }
+                        .modTab {
+                            margin-top: 12px;
+                        }
+                        .cptDataSum + [class^=cpt] {
+                            margin-top: 60px;
+                        } 
+                        .cptPersonList .prsnList {
+                            gap: 60px 56px;
+                        }
+                    }
+                }
+
+                @include media('tablet'){
+                    width: 100%; padding: 0 16px;
+                    .layoutLnbArea {
+                        flex-direction: column; width: 100%; padding-right: 0;
+                        .lnbArea {
+                            position: relative; margin: 0 -16px 10px; padding: 0; border-radius: 0; border: 0;
+                            &::before,
+                            &::after {
+                                content: ""; position: absolute; top: 100%; left: 0; width: 100%; height: 10px; background: #f4f6fa; z-index: -1;
+                            }
+                            &::before {height: auto; border-bottom: 1px solid var(--Bg-Line-line-100); z-index: 0;}
+                            .lnbTit {
+                                width: 1px; height: 1px; margin: -1px; border: 0; overflow: hidden; clip: rect(1px,1px,1px,1px); clip-path: inset(50%);
+                            }
+                            .lnbMenu {
+                                display: flex; white-space: nowrap; padding: 0 0 0 16px; overflow-x: auto;
+                                & > li {
+                                    margin: 0 20px 0 0;
+                                    &:last-child {
+                                        margin-right: 16px;
+                                    }
+                                    a {
+                                        display: flex; align-items: center; height: 56px;
+                                    }
+                                }
+                            }
+                        }
+                        .userArea {
+                            display: flex; flex-wrap: wrap; margin: 32px 0; padding: 20px;
+                            .grade {
+                                margin-right: 16px; margin-bottom: 0;
+                            }
+                            .info { 
+                                margin-right: 8px;
+                                &:last-of-type {
+                                    margin-right: 32px;
+                                }
+                                &.user {
+                                    display: inline-flex; align-items: center; flex-wrap: wrap; width: 100%; margin-bottom: 10px;
+                                    br {
+                                        display: none;
+                                    }
+                                    strong {
+                                        margin-right: 4px;
+                                    }
+                                }
+                            }
+                            .shortcut {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                    .layoutContArea {
+                        width: 100%;
+                        .cptSubTop {
+                            .subTopArea {
+                                .location {
+                                    display: none;
+                                }
+                                .subTitle {
+                                    margin: 32px 0 12px;
+                                    h1 {
+                                        font-size: rem(20px);
+                                    }
+                                    .right .frmBox {
+                                        width: 120px;
+                                        max-width: 120px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @include media('mobile'){
+                    .layoutLnbArea {
+                        padding-top: 66px;
+                        .lnbArea {
+                            position: fixed; top: 72px; left: 0; width: 100%; margin: 0; background-color: #fff; z-index: 95;
+                        }
+                    }
+                    .layoutContArea {
+                        .cptBoardList,
+                        .cptSection:not(:first-of-type),
+                        .cptDataSum + .cptSection {
+                            margin-top: 40px;
+                        }
+                        .modTab {
+                            margin-top: 0;
+                            .tabContianer {
+                                margin-top: 40px;
+                            }
+                        }
+                        & > [class^=cpt] {
+                            .comGroupTop {
+                                .alignR .opList {
+                                    margin-top: 0;
+                                }
+                                &.reverse {
+                                    flex-direction: column;
+                                    .alignL {
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        &.myMain {
+                            & > [class^=cpt] {
+                                &:not(.cptSubTop) {
+                                    margin-top: 60px;
+                                }
+                            }
+                            .cptBoardList .boardListArea .comTitH2 {
+                                display: flex;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .layoutFooter{
+
+        }
+    }
+}
+
+// 임시 
+.tempArea {display: flex; align-items: center; justify-content: center; padding: 64px 0; background-color: #aaa; color: #fff; font-weight: 300; text-transform: uppercase; letter-spacing: 0;}
+
+// .lytMypage .layoutContArea > [class^=com],
+// .lytMypage .layoutContArea > [class^=cpt],
+// .lytMypage .layoutContArea > .modTab {
+//     position: relative;
+//     &::after {content: ''; position: absolute; top: 0; bottom: 0; left: 0; right: 0; border: 1px dashed red;}
+//     &[class^=com]::after {border-color: blue !important;}
+// }
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+.cptOrderGuide {
+    margin-top: 60px;
+    &:first-child {margin-top: 0;}
+
+    .imgGuide {
+        margin-top: 20px; border-top: 1px solid var(--Gray-300); padding-top: 32px;
+        .guideGroup {
+            display: flex; gap: 32px; flex-wrap: wrap;
+            .guideItem {
+                flex: 0 0 calc(25% - 24px); display: flex; flex-wrap: wrap; align-content: space-between;
+                .tit {
+                    width: 100%; margin-top: 16px;
+                    &:first-child {margin-top: 0;}
+                    .num {font-size: rem(20px); color: var(--Gray-300); font-weight: 600; display: inline-block; vertical-align: top;}
+                    .txt {width: calc(100% - 30px); margin-top: 4px; font-size: rem(16px); color: var(--Gray-800); font-weight: 700; display: inline-block; vertical-align: top; word-break: keep-all;}                    
+                }
+                .imgArea {
+                    width: 100%; margin-top: 12px; overflow: hidden; line-height: 1;
+                    &:first-child {margin-top: 0;}
+                    img {width: 100%;}
+                }
+                .desc {margin-top: 12px; font-size: rem(16px); color: var(--Gray-800); line-height: 1.6;}
+                .comAddGuide {margin-top: 6px;}
+            }
+        }
+    }
+
+    @include media("mobile"){
+        margin-top: 40px;
+    
+        .imgGuide {
+            margin-top: 10px; padding-top: 16px;
+            .guideGroup {
+                gap: 19px 23px;
+                .guideItem {
+                    flex: 0 0 calc(50% - 11.5px); display: flex; flex-wrap: wrap; align-items: stretch;
+                    .tit {
+                        .num {font-size: rem(15px); display:block;}
+                        .txt {font-size: rem(15px);display:block;}
+                    }
+                    .imgArea {
+                        margin-top: 6px; align-self: flex-end;
+                    }
+                    .desc {margin-top: 8px; font-size: rem(15px);}
+                    .comAddGuide {margin-top: 8px;}
+                }
+            }
+        }
+    }
+
+    // 예외 클래스
+    &.col3 {
+        .imgGuide {
+            .guideGroup {
+                gap: 40px; 
+                .guideItem {
+                    flex: 0 0 calc(33.3333% - 26.6667px);
+                }
+            }
+        }
+        @include media("mobile"){
+            .imgGuide {
+                .guideGroup {
+                    gap: 24px; 
+                    .guideItem {
+                        flex: 0 0 100%;
+                    }
+                }
+            }
+        }
+    }
+}

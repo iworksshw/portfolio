@@ -1,0 +1,23 @@
+/* --------------------------- 게시판 쓰기 --------------------------- */
+.cptBoardWrite {
+    width: 100%; margin-top: 60px;
+    &:first-child {margin-top:0;}
+    .boardArea {
+
+    }
+
+    //조건
+    .comFormTable {
+        .tableTop {
+            margin-bottom: 12px;
+            .normalTxt + .btnBox {margin-left: 12px;}
+        }
+        
+        .tableArea {
+            border-top: 1px solid var(--Bg-Line-line-100);
+        }
+    }
+    @include media('mobile') {
+        .comFormTable .tableTop .alignR {justify-content: flex-end;}
+    }
+}

@@ -1,0 +1,20 @@
+/* ----------------- 모바일 플로팅 메뉴 ----------------- */
+.cptFloatMob {
+    width: 100%; position: fixed; left: 0; bottom: 0; z-index: 90;
+    .floatArea {
+        width: 44px; position: absolute; right: 16px; bottom: 11px;
+    }
+    .floatGroup {
+        width: 100%;
+        .item {
+            width: 100%;
+        }
+    }
+    .speedOn {
+        display: block; border-radius: 10px; border: 1px solid #DEE2E7; box-shadow: 1.5px 1.5px 2px 0px rgba(0, 0, 0, 0.30); overflow: hidden;
+        img {width: 100%; display: block;}
+    }
+    .goTop {
+        width: 44px; height: 44px; margin-top: 8px; font-size: 0; border-radius: 50%; background: rgba(0, 0, 0, 0.50) url(../../images/contents/cont_main_top_m.png) center no-repeat;
+    }
+}

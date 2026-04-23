@@ -1,0 +1,105 @@
+/* ------------------------ 2뎁스 탭 (데이터) ------------------------ */
+.comTabData {
+    width: 100%; margin-top: 60px;
+    &:first-child {margin-top: 0;}
+    .tabMenuGroup {
+        width: 100%; overflow: hidden;
+        .tabMenu {    
+            width: 100%; display: flex;
+
+            .tabItem {
+                width: max-content; flex-shrink: 0; display: flex; justify-content: center;
+
+                .tabName {
+                    width: max-content; height: 46px; padding: 0 36px; font-size: rem(16px); font-weight: 500; border-radius: 8px; line-height: 46px; border-radius: 23px;
+                    color: var(--Gray-600); border: 1px solid var(--Gray-300); background: #fff; display: inline-block;
+                    
+                    &.on {
+                        color: #fff; border: 1px solid var(--Primary); background: var(--Primary);
+                        &.orange { border: 1px solid var(--Point-Orange); background: var(--Point-Orange);}
+                        &.blue { border: 1px solid var(--Point-Blue); background: var(--Point-Blue);}
+                        &.mint { border: 1px solid var(--Point-Primary2); background: var(--Point-Primary2);}
+                    }
+                }
+            }
+        }
+    }
+    &:not(.modTab02) {
+        display: flex;
+        .tabMenuGroup {flex: 1;}
+        .right {
+            margin-top: auto;
+            .frmBox {width: 160px; max-width: 160px;}
+        }
+        .comTitH2 + & {margin-top: 32px;}
+    }
+    @include media('mobile'){
+        width: calc(100% + 32px); margin-left: -16px; margin-top: 40px;
+        .tabMenuGroup {
+            padding: 0 20px;
+            .tabMenu {
+                .tabItem {
+                    .tabName {
+                        padding: 0 24px; font-size: rem(15px); color: var(--Gray-700); border: 1px solid var(--Bg-Line-line-100);
+                    }
+                }
+            }
+        }
+        &:not(.modTab02) {
+            flex-wrap: wrap; 
+            .right {
+                width: 100%; margin-top: 24px; padding: 0 20px;
+                .frmBox {width: 100%; min-width: 100%;}
+            }
+        }
+        
+    }
+
+    //조건
+    & + .listBoard {
+        margin-top: 40px !important;
+        @include media('mobile'){
+            margin-top: 24px !important;
+        }
+    }
+
+    //조건 - 우측 링크 박스 스타일 (총괄본부 - 지점안내 참고)
+    &.posRelative {position: relative;}
+    .rightLink {
+        position: absolute; right: 0; top: 14px; z-index: 1;
+        ul {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            li {
+                a {
+                    display: flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--Gray-300); background: #fff; font-size: rem(14px); color: var(--Gray-600);
+                    &:hover {color: #000; border: 1px solid #000;}
+                    &:active {border: 1px solid #000; background: var(--Bg-Line-bg-100);}
+                    &:disabled {color: var(--Gray-300); border: 1px solid var(--Gray-200); background: var(--Gray-100);}
+                }
+            }
+        }
+        @include media('mobile'){
+            position: static; margin-top: 40px; padding: 0 16px;
+            ul {
+                gap: 12px 8px;
+            }
+            
+        }
+    }
+}
+
+/* 모바일 요약출주표 전용(다른곳엔 팝업내 탭이 없다는 가정하에) */
+.modPopup .modTab02 {
+    margin-right: -16px;
+    .tabMenuGroup {
+        .tabMenu {
+            .tabItem {
+                margin-right: 12px;
+                &:last-child {margin-right: 0;}
+            }
+        }
+    }
+    .tabContianer {
+        padding: 0;
+    }
+}
